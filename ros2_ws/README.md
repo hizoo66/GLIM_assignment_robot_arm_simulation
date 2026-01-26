@@ -39,35 +39,35 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 └──────┬───────┘
 
-　　　　　　│ (Qt Signal / Thread)
+　　　　　│ (Qt Signal / Thread)
 
 ┌──────▼───────┐
 
-│　 MoveWorker　　　 │ ← 작업 스레드 (비동기 실행)
+│　 MoveWorker　　 │ ← 작업 스레드 (비동기 실행)
 
 └──────┬───────┘
 
 　　　　　　│
 
-┌──────▼─────────────────────┐
+┌──────▼──────────────────┐
 
 │ 　BackendNode 　　　　　　　│
 
-│ 　- JointState subscribe 　　　　　│
+│ 　- JointState subscribe 　　　　│
 
-│ 　- MoveGroup Action Client 　　│
+│ 　- MoveGroup Action Client　　│
 
-└──────┬─────────────────────┘
+└──────┬──────────────────┘
 
-　　　　　　│
+　　　　　│
 
-┌──────▼──────────┐
+┌──────▼─────────┐
 
-│　 MoveIt2 　　　　　　　│
+│　 MoveIt2 　　　　　　│
 
-│ (Planning/Exec)　 │
+│ (Planning/Exec)　　　 │
 
-└─────────────────┘
+└────────────────┘
 
 
 핵심 설계 포인트:
