@@ -81,9 +81,9 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 ### 3.1 사전 준비
 
-1. ROS2 & MoveIt2 설치
-**ROS2 설치 : ros-humble-desktop**
-    ROS2 저장소 추가
+1. ROS2 & MoveIt2 설치  
+**ROS2 설치 : ros-humble-desktop**  
+    ROS2 저장소 추가  
     ```python
     # add-apt-repository 명령어 제공 : PPA / universe / multiverse 추가 기능
     sudo apt install software-properties-common -y
@@ -103,7 +103,6 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] \
     http://packages.ros.org/ros2/ubuntu \
     $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
-    
     ```
     
     ROS2 Humble 설치
@@ -114,10 +113,10 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     # ROS2 환경 활성화
     source /opt/ros/humble/setup.bash
     ```
-    
-**doosan-robot2 설치 시작 :** https://github.com/DoosanRobotics/doosan-robot2
-    
-    ROS2 워크스페이스 만들기
+---
+
+**doosan-robot2 설치 :** https://github.com/DoosanRobotics/doosan-robot2  
+    ROS2 워크스페이스 만들기  
     ```bash
     cd ~
     mkdir -p ros2_ws/src
@@ -125,14 +124,14 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     ```
     
     doosan-robot2 GitHub 클론
+    
     ```bash
     cd ~/ros2_ws/src
     git clone https://github.com/DoosanRobotics/doosan-robot2.git
-    
     ```
     
-    - 두산로보틱스 Required Dependencies
-    ```bash
+- 두산로보틱스 Required Dependencies  
+    ```python
     sudo apt-get update
     sudo apt-get install -y libpoco-dev libyaml-cpp-dev wget \
                             ros-humble-control-msgs ros-humble-realtime-tools ros-humble-xacro \
@@ -143,7 +142,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     
     ```
     
-    - 두산 Install Gazebo 
+- 두산 Install Gazebo 
     ```bash
     sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
     wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
@@ -151,7 +150,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     sudo apt-get install -y libignition-gazebo6-dev ros-humble-gazebo-ros-pkgs ros-humble-ros-gz-sim ros-humble-ros-gz
     ```
     
-    ---
+---
     
 **rosdep 설치**
     
@@ -178,13 +177,22 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     sudo apt install python3-colcon-common-extensions -y
     
     ```
-2. Doosan E0509 MoveIt 패키지 실행
+2. Doosan E0509 MoveIt 패키지 빌드 및 실행
    (시뮬레이션 툴 또는 실기)
 
+빌드 : 빌드 후에 꼭 환경 적용
+```bash
+colcon build
+source ~/ros2_ws/install/setup.bash
+```
+
+모델 불러오기
 ```bash
 # 본 프로젝트에서는 moveit2 + Rviz사용 (터미널 A)
 ros2 launch dsr_bringup2 dsr_bringup2_moveit.launch.py mode:=virtual model:=e0509
 ```
+
+---
 
 ### 3.2 JointState 토픽이 publish 중인지 확인
 ```bash
