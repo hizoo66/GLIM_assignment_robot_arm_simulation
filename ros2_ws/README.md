@@ -35,37 +35,37 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 ┌──────────────┐
 
-│ 　PyQt5 GUI　　 │ ← 사용자 입력 (XYZ, 속도, 모드)
+│ 　PyQt5 GUI　　　　 │ ← 사용자 입력 (XYZ, 속도, 모드)
 
 └──────┬───────┘
 
-　　　　│ (Qt Signal / Thread)
+　　　　　　│ (Qt Signal / Thread)
 
 ┌──────▼───────┐
 
-│　 MoveWorker　　　　 │ ← 작업 스레드 (비동기 실행)
+│　 MoveWorker　　　 │ ← 작업 스레드 (비동기 실행)
 
 └──────┬───────┘
 
-　　　　│
+　　　　　　│
 
 ┌──────▼─────────────────────┐
 
-│ 　BackendNode 　　　　│
+│ 　BackendNode 　　　　　　　│
 
-│ 　- JointState subscribe 　　　│
+│ 　- JointState subscribe 　　　　　│
 
-│ 　- MoveGroup Action Client 　│
+│ 　- MoveGroup Action Client 　　│
 
 └──────┬─────────────────────┘
 
-　　　　│
+　　　　　　│
 
 ┌──────▼──────────┐
 
-│　 MoveIt2 　　　　│
+│　 MoveIt2 　　　　　　　│
 
-│ (Planning/Exec) │
+│ (Planning/Exec)　 │
 
 └─────────────────┘
 
@@ -183,7 +183,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 ```bash
 # 본 프로젝트에서는 moveit2 + Rviz사용 (터미널 A)
-ros2 launch dsr_bringup2 dsr_bringup2_moveit.launch.py
+ros2 launch dsr_bringup2 dsr_bringup2_moveit.launch.py mode:=virtual model:=e0509
 ```
 
 ### 3.2 JointState 토픽이 publish 중인지 확인
