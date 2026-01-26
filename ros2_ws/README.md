@@ -43,19 +43,19 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 ┌──────▼───────┐
 
-│　 MoveWorker　　 │ ← 작업 스레드 (비동기 실행)
+│　 MoveWorker　　　 │ ← 작업 스레드 (비동기 실행)
 
 └──────┬───────┘
 
-　　　　　　│
+　　　　　│
 
 ┌──────▼──────────────────┐
 
-│ 　BackendNode 　　　　　　　│
+│ 　BackendNode 　　　　　　　　　│
 
-│ 　- JointState subscribe 　　　　│
+│ 　- JointState subscribe 　　　　　　│
 
-│ 　- MoveGroup Action Client　　│
+│ 　- MoveGroup Action Client　　　　│
 
 └──────┬──────────────────┘
 
@@ -65,7 +65,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 │　 MoveIt2 　　　　　　│
 
-│ (Planning/Exec)　　　 │
+│ (Planning/Exec)　　　　 │
 
 └────────────────┘
 
@@ -118,21 +118,21 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 **doosan-robot2 설치 시작 :** https://github.com/DoosanRobotics/doosan-robot2
     
     ROS2 워크스페이스 만들기
-    ```python
+    ```bash
     cd ~
     mkdir -p ros2_ws/src
     cd ros2_ws
     ```
     
     doosan-robot2 GitHub 클론
-    ```python
+    ```bash
     cd ~/ros2_ws/src
     git clone https://github.com/DoosanRobotics/doosan-robot2.git
     
     ```
     
     - 두산로보틱스 Required Dependencies
-    ```python
+    ```bash
     sudo apt-get update
     sudo apt-get install -y libpoco-dev libyaml-cpp-dev wget \
                             ros-humble-control-msgs ros-humble-realtime-tools ros-humble-xacro \
@@ -144,7 +144,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     ```
     
     - 두산 Install Gazebo 
-    ```python
+    ```bash
     sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
     wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
     sudo apt-get update
@@ -155,7 +155,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     
 **rosdep 설치**
     
-    ```python
+    ```bash
     sudo apt update
     sudo apt install python3-rosdep -y
     
@@ -165,7 +165,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     
     의존성 설치 (자동)
 
-    ```python
+    ```bash
     cd ~/ros2_ws
     rosdep update
     rosdep install --from-paths src --ignore-src -r -y
@@ -173,7 +173,7 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
     
 **colcon 설치**
         
-    ```python
+    ```bash
     sudo apt update
     sudo apt install python3-colcon-common-extensions -y
     
