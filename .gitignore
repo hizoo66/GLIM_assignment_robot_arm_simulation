@@ -16,7 +16,7 @@ __pycache__/
 # specifically ignore package-level cache
 ros2_ws/src/my_ros2_assignment/my_ros2_assignment/__pycache__/
 ros2_ws/scr/doosan-robot2/
-
+ros2_ws/scr/my_ros2_assignmnnet/test/
 # =========================
 # Editor / OS
 # =========================
