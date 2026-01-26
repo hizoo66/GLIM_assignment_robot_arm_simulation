@@ -1,0 +1,39 @@
+# =========================
+# ROS2 workspace
+# =========================
+build/
+install/
+log/
+
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# specifically ignore package-level cache
+src/my_ros2_assignment/my_ros2_assignment/__pycache__/
+scr/doosan-robot2/
+
+# =========================
+# Editor / OS
+# =========================
+.vscode/
+.idea/
+.DS_Store
+
+# =========================
+# CMake / colcon
+# =========================
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+
+# =========================
+# ROS runtime files
+# =========================
+*.bag
+*.db3
