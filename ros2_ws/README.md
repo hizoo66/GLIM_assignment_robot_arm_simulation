@@ -117,21 +117,21 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
 
 **doosan-robot2 설치 :** https://github.com/DoosanRobotics/doosan-robot2  
     ROS2 워크스페이스 만들기  
-    ```bash
-    cd ~
-    mkdir -p ros2_ws/src
-    cd ros2_ws
-    ```
+```bash
+cd ~
+mkdir -p ros2_ws/src
+cd ros2_ws
+```
     
-    doosan-robot2 GitHub 클론
+**doosan-robot2 GitHub 클론**
     
-    ```bash
-    cd ~/ros2_ws/src
-    git clone https://github.com/DoosanRobotics/doosan-robot2.git
-    ```
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/DoosanRobotics/doosan-robot2.git
+```
     
 - 두산로보틱스 Required Dependencies  
-    ```python
+```python
     sudo apt-get update
     sudo apt-get install -y libpoco-dev libyaml-cpp-dev wget \
                             ros-humble-control-msgs ros-humble-realtime-tools ros-humble-xacro \
@@ -139,45 +139,46 @@ PyQt5 기반 GUI를 통해 **Doosan E0509 로봇팔**을
                             ros-humble-ros2-controllers ros-humble-gazebo-msgs ros-humble-moveit-msgs \
                             dbus-x11 ros-humble-moveit-configs-utils ros-humble-moveit-ros-move-group \
                             ros-humble-gazebo-ros-pkgs ros-humble-ros-gz-sim ros-humble-ign-ros2-control
-    
-    ```
+```
     
 - 두산 Install Gazebo 
-    ```bash
-    sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
-    wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
-    sudo apt-get update
-    sudo apt-get install -y libignition-gazebo6-dev ros-humble-gazebo-ros-pkgs ros-humble-ros-gz-sim ros-humble-ros-gz
-    ```
+```bash
+sudo sh -c 'echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > /etc/apt/sources.list.d/gazebo-stable.list'
+wget http://packages.osrfoundation.org/gazebo.key -O - | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y libignition-gazebo6-dev ros-humble-gazebo-ros-pkgs ros-humble-ros-gz-sim ros-humble-ros-gz
+```
     
 ---
     
 **rosdep 설치**
     
-    ```bash
-    sudo apt update
-    sudo apt install python3-rosdep -y
+```bash
+sudo apt update
+sudo apt install python3-rosdep -y
     
-    # 초기화 한 번만 실행, rosdep 데이터베이스 초기화
-    sudo rosdep init
-    ```
+# 초기화 한 번만 실행, rosdep 데이터베이스 초기화
+sudo rosdep init
+```
     
-    의존성 설치 (자동)
+의존성 설치 (자동)
 
-    ```bash
-    cd ~/ros2_ws
-    rosdep update
-    rosdep install --from-paths src --ignore-src -r -y
-    ```
+```bash
+cd ~/ros2_ws
+rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+```
     
 **colcon 설치**
         
-    ```bash
-    sudo apt update
-    sudo apt install python3-colcon-common-extensions -y
-    
-    ```
-2. Doosan E0509 MoveIt 패키지 빌드 및 실행
+```bash
+sudo apt update
+sudo apt install python3-colcon-common-extensions -y
+```
+
+---
+
+**2. Doosan E0509 MoveIt 패키지 빌드 및 실행**
    (시뮬레이션 툴 또는 실기)
 
 빌드 : 빌드 후에 꼭 환경 적용
